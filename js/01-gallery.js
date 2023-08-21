@@ -2,7 +2,7 @@ import { galleryItems } from './gallery-items.js';
 // Change code below this line
 const listEL = document.querySelector(".gallery");
 const galleryList = (array) => array.map(item => 
-    `<li class ="gallery__item"
+    `<li class ="gallery__item">
     <a class ="gallery__link" href ="${item.original}">
     <img 
       class="gallery__image"
