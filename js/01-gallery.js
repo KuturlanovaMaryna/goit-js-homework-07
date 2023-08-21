@@ -31,15 +31,13 @@ const onImageClick = (e) => {
     </div>`)
     modalInstance.show();
 
-    document.addEventListener("keydown", modalKeyClose);
-};
-    
-const modalKeyClose = (e) => {
-    if (e.key === "Escape") {
-        modalInstance.close();
+    document.addEventListener("keydown", (e) => {
+        if (e.code === "Escape") {
+            modalInstance.close();
         
-    };
-};
+        };
+    });
+}   
 
 listEL.insertAdjacentHTML("beforeend", galleryList(galleryItems));
 listEL.addEventListener('click', onImageClick)
