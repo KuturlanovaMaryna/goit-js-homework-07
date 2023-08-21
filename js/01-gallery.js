@@ -27,7 +27,6 @@ const onImageClick = (e) => {
       class="gallery__image"
       src="${imageItem}"
       alt="${currentListItem.alt}" width="800" height="600"/>
-    </a>
     </div>`);
     modalInstance.show();
 
