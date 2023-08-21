@@ -28,16 +28,22 @@ const onImageClick = (e) => {
       src="${imageItem}"
       alt="${currentListItem.alt}" width="800" height="600"/>
     </a>
-    </div>`)
+    </div>`);
     modalInstance.show();
 
-    document.addEventListener("keydown", (e) => {
-        if (e.code === "Escape") {
-            modalInstance.close();
-        
-        };
-    });
-}   
+    document.addEventListener("keydown", modalClose)
+};
+
+const modalClose = (e) => {
+    if (e.code === "Escape") {
+        modalInstance.close();
+        document.removeEventListener("keydown", modalClose);
+    };
+};
+  
 
 listEL.insertAdjacentHTML("beforeend", galleryList(galleryItems));
 listEL.addEventListener('click', onImageClick)
+
+
+
