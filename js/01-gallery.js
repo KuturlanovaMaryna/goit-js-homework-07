@@ -13,20 +13,21 @@ const galleryList = (array) => array.map(item =>
     </li> `)
     .join("");
 
-
+let modalInstance = null;
 const onImageClick = (e) => {
+    e.preventDefault();
     if (e.currentTarget === e.target) {
         return;
     }
     const currentListItem = e.target;
     const imageItem = currentListItem.dataset.source;
    
-    const modalInstance = basicLightbox.create(`
+   const modalInstance = basicLightbox.create(`
     <div class="modal">
        <img 
       class="gallery__image"
       src="${imageItem}"
-      alt="${currentListItem.alt}" width="800" height="600"/>
+      alt="${currentListItem.alt} " width="800" height="600"/>
     </div>`);
     modalInstance.show();
 
