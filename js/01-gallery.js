@@ -14,6 +14,8 @@ const galleryList = (array) => array.map(item =>
     .join("");
 
 let modalInstance = null;
+
+
 const onImageClick = (e) => {
     e.preventDefault();
     if (e.currentTarget === e.target) {
@@ -31,14 +33,16 @@ const onImageClick = (e) => {
     </div>`);
     modalInstance.show();
 
-    document.addEventListener("keydown", modalClose)
-};
-
-const modalClose = (e) => {
+    const modalClose = (e) => {
     if (e.code === "Escape") {
         modalInstance.close();
         document.removeEventListener("keydown", modalClose);
-    };
+        };
+        
+    document.addEventListener("keydown", modalClose)
+};
+
+
 };
   
 
