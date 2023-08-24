@@ -13,7 +13,7 @@ const galleryList = (array) => array.map(item =>
     </li> `)
     .join("");
 
-let modalInstance = null;
+
 
 
 const onImageClick = (e) => {
@@ -34,15 +34,14 @@ const onImageClick = (e) => {
     modalInstance.show();
 
     const modalClose = (e) => {
-    if (e.code === "Escape") {
-        modalInstance.close();
-        document.removeEventListener("keydown", modalClose);
+        if (e.code === "Escape") {
+            modalInstance.close();
+            document.removeEventListener("keydown", modalClose);
         };
         
-    document.addEventListener("keydown", modalClose)
-};
+    };
 
-
+    document.addEventListener("keydown", modalClose);
 };
   
 
